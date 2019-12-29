@@ -6,7 +6,11 @@ function App() {
   const onChangeUrl = e => {
     setUrl(e.target.value);
   }
-  return (
+  let pathname = window.location.pathname;
+  if (pathname === '/hello') {
+    window.location.href = 'https://blog.holy.kiwi';
+    return null;
+  } else return (
     <div className="App">
       <input type="text" value={url} onChange={onChangeUrl} />
       <button>generate short url</button>
